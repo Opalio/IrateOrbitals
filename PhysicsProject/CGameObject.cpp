@@ -28,6 +28,12 @@ CGameObject::CGameObject() //(sf::Vector2f _v2fPosition, float _fScale, b2BodyTy
 
 CGameObject::~CGameObject()
 {
+	if (m_pShape != nullptr)
+	{
+		delete m_pShape;
+		m_pShape = nullptr;
+	}
+
 	// b2Body's deletion is done by the world
 	if (m_pBody != nullptr)
 	{
