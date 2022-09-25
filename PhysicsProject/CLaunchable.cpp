@@ -16,9 +16,12 @@ void CLaunchable::Launch(float _fScale, sf::Vector2f _v2fPosition, b2World& _wor
 	m_pBody = _world.CreateBody(&m_bodyDef);
 
 	float fOriginX = (m_texture.getSize().x / 2);
-	m_shape.m_radius = (fOriginX) / _fScale;
+
+	// Launchables are circles
+	m_pShape = new b2CircleShape();
+	m_pShape->m_radius = (fOriginX) / _fScale;
 	m_fixtureDef.density = 5.0f;
-	m_fixtureDef.shape = &m_shape;
+	m_fixtureDef.shape = m_pShape;
 	m_pBody->CreateFixture(&m_fixtureDef);
 
 	m_pBody->GetUserData().pointer = (uintptr_t)this;

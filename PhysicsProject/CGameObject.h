@@ -58,7 +58,7 @@ protected:
 	// Box2D for physics
 	b2BodyDef m_bodyDef;
 	b2Body* m_pBody;
-	b2PolygonShape m_shape;
+	b2Shape* m_pShape;
 	b2FixtureDef m_fixtureDef;
 
 	// SFML for rendering
