@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\InClass">
+      <UniqueIdentifier>{1e3d872a-2066-48f2-96a5-4e8695514579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\InClass">
+      <UniqueIdentifier>{3741a69c-88ac-4b40-8a10-2c54418d99fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects">
+      <UniqueIdentifier>{be741095-e444-47bb-bea0-08ccda745f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects">
+      <UniqueIdentifier>{1625eb93-004b-4539-b4ae-50a3c9a20dae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\PhysicsObjects">
+      <UniqueIdentifier>{5ce7b613-8fd8-4a1e-af21-2e4d7da1df35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\PhysicsObjects\Indestructables">
+      <UniqueIdentifier>{249cba86-147a-43e6-98fc-5911ae4590ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects\PhysicsObjects">
+      <UniqueIdentifier>{b10abb1b-cc54-479d-a6b7-53c6c0b31242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects\PhysicsObjects\Indestructables">
+      <UniqueIdentifier>{60d0da50-7333-4af9-89c8-bb1fda178614}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables">
+      <UniqueIdentifier>{757c154e-60a7-4bae-ab40-779daeec404e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables">
+      <UniqueIdentifier>{52a03cc6-0fd3-49f7-bb83-e1ceb900e5ab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sling.cpp">
+      <Filter>Source Files\InClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Spring.cpp">
+      <Filter>Source Files\InClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Bird.cpp">
+      <Filter>Source Files\InClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Catapult.cpp">
+      <Filter>Source Files\InClass</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactListener.cpp">
+      <Filter>Source Files\InClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\InClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files\InClass</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLevel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPhysicsObject.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlanet.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="CDestructable.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="CIndestructable.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="CLaunchable.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsteriod.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClCompile>
+    <ClCompile Include="CContactListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLauncher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Spring.h">
+      <Filter>Header Files\InClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Bird.h">
+      <Filter>Header Files\InClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Catapult.h">
+      <Filter>Header Files\InClass</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactListener.h">
+      <Filter>Header Files\InClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files\InClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\InClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Sling.h">
+      <Filter>Header Files\InClass</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPhysicsObject.h">
+      <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlanet.h">
+      <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CDestructable.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CIndestructable.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CLaunchable.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsteriod.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CContactListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLauncher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
