@@ -5,6 +5,7 @@
 #include "CComet.h"
 #include "CMeteor.h"
 #include "CStarLinkSat.h"
+#include "CBox.h"
 
 CLevel::CLevel(float _fScale)
 {
@@ -48,6 +49,13 @@ CLevel::CLevel(float _fScale)
 	for (int i = 0; i < 10; i++)
 	{
 		m_vpGameObjects.push_back(new CNuclearPasta(sf::Vector2f(500 - i * 2, 500 - i * 2), _fScale, m_pWorld));
+	}
+
+	for (int i = 0; i < 15; i++)
+	{
+		CDestructable* newBox = new CBox(sf::Vector2f(500 + i * 2, 500 + i * 2), _fScale, m_pWorld);
+		m_vpGameObjects.push_back(newBox);
+		m_vpGameObjects.push_back(newBox);
 	}
 
 	for (int i = 0; i < 20; i++)
@@ -135,7 +143,7 @@ void CLevel::MouseButtonPressed(sf::RenderWindow& _window, float _fScale)
 {
 	if (m_bSpecialAbilityActivated) // If true then new lauchable should be created
 	{
-		CLaunchable* pNewLauchable = new CStarLinkSat();
+		CLaunchable* pNewLauchable = new CAsteriod();
 
 		m_vpGameObjects.push_back(pNewLauchable);
 

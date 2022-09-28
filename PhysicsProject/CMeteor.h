@@ -11,7 +11,8 @@ public:
 
 private:
     
-
+    float ConvertToRadians(float _fDegrees);
+    b2Vec2 RotateVector(b2Vec2 _v2f, float _degrees);
     //CMeteor* Clone() const { return new CMeteor(*this); }
 
 

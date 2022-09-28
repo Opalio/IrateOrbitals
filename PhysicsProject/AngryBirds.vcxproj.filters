@@ -118,6 +118,12 @@
       <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables</Filter>
     </ClCompile>
     <ClCompile Include="CStarLinkSat.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClCompile>
+    <ClCompile Include="CBox.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Destructables</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlank.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -186,9 +192,15 @@
       <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables</Filter>
     </ClInclude>
     <ClInclude Include="CMeteor.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables</Filter>
     </ClInclude>
     <ClInclude Include="CStarLinkSat.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClInclude>
+    <ClInclude Include="CBox.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Destructables</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

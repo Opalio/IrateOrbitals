@@ -54,7 +54,7 @@ CGameObject* CGameObject::CreateGameObject(EGAMEOBJECTTYPE _EGameObjectType, b2W
 		break;
 	case EGAMEOBJECTTYPE::ENEMY:
 		break;
-	case EGAMEOBJECTTYPE::DESTRUCTABLE1:
+	case EGAMEOBJECTTYPE::BOX:
 		break;
 	case EGAMEOBJECTTYPE::DESTRUCTABLE2:
 		break;

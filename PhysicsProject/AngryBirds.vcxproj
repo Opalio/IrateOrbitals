@@ -148,6 +148,7 @@
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="CAsteriod.cpp" />
     <ClCompile Include="Catapult.cpp" />
+    <ClCompile Include="CBox.cpp" />
     <ClCompile Include="CComet.cpp" />
     <ClCompile Include="CContactListener.cpp" />
     <ClCompile Include="CDestructable.cpp" />
@@ -162,6 +163,7 @@
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="CPhysicsObject.cpp" />
     <ClCompile Include="CPlanet.cpp" />
+    <ClCompile Include="CPlank.cpp" />
     <ClCompile Include="CStarLinkSat.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
@@ -173,6 +175,7 @@
     <ClInclude Include="Bird.h" />
     <ClInclude Include="CAsteriod.h" />
     <ClInclude Include="Catapult.h" />
+    <ClInclude Include="CBox.h" />
     <ClInclude Include="CComet.h" />
     <ClInclude Include="CContactListener.h" />
     <ClInclude Include="CDestructable.h" />
@@ -187,6 +190,7 @@
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="CPhysicsObject.h" />
     <ClInclude Include="CPlanet.h" />
+    <ClInclude Include="CPlank.h" />
     <ClInclude Include="CStarLinkSat.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Object.h" />
