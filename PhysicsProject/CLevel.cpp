@@ -44,12 +44,12 @@ CLevel::CLevel(float _fScale)
 
 	for (int i = 0; i < 10; i++)
 	{
-		m_vpGameObjects.push_back(new CNuclearPasta(sf::Vector2f(500 - i, 500 - i), _fScale, m_pWorld));
+		m_vpGameObjects.push_back(new CNuclearPasta(sf::Vector2f(500 - i * 2, 500 - i * 2), _fScale, m_pWorld));
 	}
 
 	for (int i = 0; i < 20; i++)
 	{
-		CDestructable* newEnemy = new CEnemy(sf::Vector2f(500 + i, 300 + i), _fScale, m_pWorld);
+		CDestructable* newEnemy = new CEnemy(sf::Vector2f(500 + i * 2, 300 + i * 2), _fScale, m_pWorld);
 
 		m_vpGameObjects.push_back(newEnemy);
 		m_vpDestructableObjects.push_back(newEnemy);
