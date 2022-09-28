@@ -150,11 +150,13 @@
     <ClCompile Include="Catapult.cpp" />
     <ClCompile Include="CContactListener.cpp" />
     <ClCompile Include="CDestructable.cpp" />
+    <ClCompile Include="CEnemy.cpp" />
     <ClCompile Include="CGameObject.cpp" />
     <ClCompile Include="CIndestructable.cpp" />
     <ClCompile Include="CLaunchable.cpp" />
     <ClCompile Include="CLauncher.cpp" />
     <ClCompile Include="CLevel.cpp" />
+    <ClCompile Include="CNuclearPasta.cpp" />
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="CPhysicsObject.cpp" />
     <ClCompile Include="CPlanet.cpp" />
@@ -170,11 +172,13 @@
     <ClInclude Include="Catapult.h" />
     <ClInclude Include="CContactListener.h" />
     <ClInclude Include="CDestructable.h" />
+    <ClInclude Include="CEnemy.h" />
     <ClInclude Include="CGameObject.h" />
     <ClInclude Include="CIndestructable.h" />
     <ClInclude Include="CLaunchable.h" />
     <ClInclude Include="CLauncher.h" />
     <ClInclude Include="CLevel.h" />
+    <ClInclude Include="CNuclearPasta.h" />
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="CPhysicsObject.h" />
     <ClInclude Include="CPlanet.h" />

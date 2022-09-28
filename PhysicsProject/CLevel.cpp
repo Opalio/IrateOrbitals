@@ -1,9 +1,11 @@
 #include "CLevel.h"
 #include "CAsteriod.h"
+#include "CNuclearPasta.h"
+#include "CEnemy.h"
 
 CLevel::CLevel(float _fScale)
 {
-	b2Vec2 b2v2Gravity(0.0f, 10.0f);
+	b2Vec2 b2v2Gravity(0.0f, 0.0f);
 	m_pWorld = new b2World(b2v2Gravity);
 
 	// Create and bind the contact listener
@@ -11,13 +13,30 @@ CLevel::CLevel(float _fScale)
 	m_pWorld->SetContactListener(m_pContactListener);
 
 	// Static Floor
-	m_vpObjects.push_back(new Object(sf::Vector2f(480, 500), _fScale, b2BodyType::b2_staticBody, "Ground.png", m_pWorld));
+	//m_vpObjects.push_back(new Object(sf::Vector2f(480, 500), _fScale, b2BodyType::b2_staticBody, "Ground.png", m_pWorld));
 
-	// 3 dynamic 'balls'
-	for (int i = 0; i < 3; i++)
-	{
-		m_vpObjects.push_back(new Object(sf::Vector2f(550 + i * 100, 100), _fScale, b2BodyType::b2_dynamicBody, "Ball.png", m_pWorld));
-	}
+	//// 3 dynamic 'balls'
+	//for (int i = 0; i < 1; i++)
+	//{
+	//	m_vpObjects.push_back(new Object(sf::Vector2f(550 + i * 100, 100), _fScale, b2BodyType::b2_dynamicBody, "Ball.png", m_pWorld));
+	//}
+
+	// Planet
+
+	CPlanet* newPlanet = new CPlanet(sf::Vector2f(500, 250), _fScale, m_pWorld);
+	m_vpPlanets.push_back(newPlanet);
+	m_vpGameObjects.push_back(newPlanet);
+
+	CPlanet* newPlanet2 = new CPlanet(sf::Vector2f(750, 250), _fScale, m_pWorld);
+	m_vpPlanets.push_back(newPlanet2);
+	m_vpGameObjects.push_back(newPlanet2);
+
+	m_vpGameObjects.push_back(new CNuclearPasta(sf::Vector2f(500, 500), _fScale, m_pWorld));
+
+	CDestructable* newEnemy = new CEnemy(sf::Vector2f(500, 300), _fScale, m_pWorld);
+
+	m_vpGameObjects.push_back(newEnemy);
+	m_vpDestructableObjects.push_back(newEnemy);
 
 	m_pLauncher = new CLauncher(sf::Vector2f(250, 410));
 }
@@ -67,6 +86,24 @@ void CLevel::Update()
 {
 	m_pWorld->Step(1 / 60.f, 8, 3);
 
+	/*for (size_t i = 0; i < m_vpObjects.size(); i++)
+	{
+		std::cout << m_vpObjects[i]->Getb2Body()->GetTransform().p.x << ", " << m_vpObjects[i]->Getb2Body()->GetTransform().p.y << std::endl;
+	}*/
+
+	for (size_t i = 0; i < m_vpPlanets.size(); i++)
+	{
+		for (size_t j = 0; j < m_vpGameObjects.size(); j++)
+		{
+			if (m_vpGameObjects[j]->GetObjectType() != EGAMEOBJECTTYPE::PLANET)
+			{
+				m_vpPlanets[i]->ExertGravitationalForceOn(m_vpGameObjects[j]);
+			}
+		}
+	}
+
+	DestroyObjectsMarkedForDestruction();
+
 	return;
 }
 
@@ -92,6 +129,56 @@ void CLevel::MouseButtonReleased(float _fScale)
 void CLevel::MouseMoved(sf::RenderWindow& _window)
 {
 	m_pLauncher->MoveLaunchable(_window);
+
+	return;
+}
+
+void CLevel::DestroyObjectsMarkedForDestruction()
+{
+	for (size_t i = 0; i < m_vpDestructableObjects.size(); i++)
+	{
+		if (m_vpDestructableObjects[i]->GetShouldDestroy())
+		{
+			std::cout << "Destroying" << std::endl;
+			DestroyDestructable(m_vpDestructableObjects[i]);
+		}
+	}
+
+	// Get rid of all nullptrs in the vector
+	m_vpDestructableObjects.erase(std::remove(begin(m_vpDestructableObjects), end(m_vpDestructableObjects), nullptr), end(m_vpDestructableObjects));
+
+	return;
+}
+
+void CLevel::DestroyDestructable(CDestructable* _pDestructable)
+{
+	// Erase it from the gameobject vector
+	for (size_t i = 0; i < m_vpGameObjects.size(); i++)
+	{
+		if (m_vpGameObjects[i] == _pDestructable)
+		{
+			m_vpGameObjects.erase(m_vpGameObjects.begin() + i);
+
+			// exit the loop
+			i = m_vpGameObjects.size();
+		}
+	}
+
+	// Nullify the pointer in the destructableobjects vector
+	// Can not erase as it will mess up loop calling this function
+	for (size_t i = 0; i < m_vpDestructableObjects.size(); i++)
+	{
+		if (m_vpDestructableObjects[i] == _pDestructable)
+		{
+			m_vpDestructableObjects[i] = nullptr;
+
+			// exit the loop
+			i = m_vpDestructableObjects.size();
+		}
+	}
+
+	// Actually delete the object
+	delete _pDestructable;
 
 	return;
 }

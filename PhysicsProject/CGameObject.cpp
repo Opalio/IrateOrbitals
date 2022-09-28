@@ -52,11 +52,7 @@ CGameObject* CGameObject::CreateGameObject(EGAMEOBJECTTYPE _EGameObjectType, b2W
 		break;
 	case EGAMEOBJECTTYPE::LAUNCHABLE3:
 		break;
-	case EGAMEOBJECTTYPE::ENEMY1:
-		break;
-	case EGAMEOBJECTTYPE::ENEMY2:
-		break;
-	case EGAMEOBJECTTYPE::ENEMY3:
+	case EGAMEOBJECTTYPE::ENEMY:
 		break;
 	case EGAMEOBJECTTYPE::DESTRUCTABLE1:
 		break;
@@ -88,7 +84,7 @@ void CGameObject::StartContact(CGameObject* _goOther)
 {
 	if (m_bodyDef.type == b2BodyType::b2_staticBody)
 	{
-		std::cout << "Floor Hit \n";
+		//std::cout << "Floor Hit \n";
 	}
 
 	return;
@@ -96,14 +92,14 @@ void CGameObject::StartContact(CGameObject* _goOther)
 
 void CGameObject::EndContact(CGameObject* _goOther)
 {
-	std::cout << "Stop Hit \n";
+	//std::cout << "Stop Hit \n";
 	return;
 }
 
 void CGameObject::PostSolve(const b2ContactImpulse* _impulse)
 {
 	// Check force of collision here
-	std::cout << "Post solve Hit \n";
+	//std::cout << "Post solve Hit \n";
 
 	return;
 }

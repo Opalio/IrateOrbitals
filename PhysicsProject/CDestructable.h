@@ -8,5 +8,7 @@ class CDestructable :
 public:
     CDestructable();
     virtual ~CDestructable();
+
+    void PostSolve(const b2ContactImpulse* _impulse);
 };
 

@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables">
       <UniqueIdentifier>{52a03cc6-0fd3-49f7-bb83-e1ceb900e5ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameObjects\PhysicsObjects\Destructables">
+      <UniqueIdentifier>{40bc8a28-01cb-468f-ac44-0ea45a1ee281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game Objects\PhysicsObjects\Destructables">
+      <UniqueIdentifier>{e5539799-bdbb-415b-b53e-b3667f2c0c91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sling.cpp">
@@ -69,26 +75,14 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CGameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CLevel.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CPhysicsObject.cpp">
-      <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
     <ClCompile Include="CPlanet.cpp">
       <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
-    <ClCompile Include="CDestructable.cpp">
-      <Filter>Source Files\Game Objects\PhysicsObjects</Filter>
-    </ClCompile>
     <ClCompile Include="CIndestructable.cpp">
       <Filter>Source Files\Game Objects\PhysicsObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="CLaunchable.cpp">
-      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables</Filter>
     </ClCompile>
     <ClCompile Include="CAsteriod.cpp">
       <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables</Filter>
@@ -98,6 +92,24 @@
     </ClCompile>
     <ClCompile Include="CLauncher.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CNuclearPasta.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables</Filter>
+    </ClCompile>
+    <ClCompile Include="CLaunchable.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClCompile>
+    <ClCompile Include="CDestructable.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Destructables</Filter>
+    </ClCompile>
+    <ClCompile Include="CPhysicsObject.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnemy.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Destructables</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameObject.cpp">
+      <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,26 +134,11 @@
     <ClInclude Include="Sling.h">
       <Filter>Header Files\InClass</Filter>
     </ClInclude>
-    <ClInclude Include="CGameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CPhysicsObject.h">
-      <Filter>Header Files\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="CPlanet.h">
       <Filter>Header Files\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="CDestructable.h">
-      <Filter>Header Files\GameObjects\PhysicsObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="CIndestructable.h">
-      <Filter>Header Files\GameObjects\PhysicsObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="CLaunchable.h">
-      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables</Filter>
     </ClInclude>
     <ClInclude Include="CAsteriod.h">
       <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables</Filter>
@@ -154,6 +151,27 @@
     </ClInclude>
     <ClInclude Include="CLauncher.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CNuclearPasta.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnemy.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Destructables</Filter>
+    </ClInclude>
+    <ClInclude Include="CPhysicsObject.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CDestructable.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Destructables</Filter>
+    </ClInclude>
+    <ClInclude Include="CIndestructable.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables</Filter>
+    </ClInclude>
+    <ClInclude Include="CLaunchable.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameObject.h">
+      <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

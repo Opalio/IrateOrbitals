@@ -30,8 +30,8 @@ void CContactListener::EndContact(b2Contact* contact)
 
 	if (bodyuserdataA && bodyuserdataB) // not null
 	{
-		//bodyuserdataA->EndContact(bodyuserdataB);
-		//bodyuserdataB->EndContact(bodyuserdataA);
+		bodyuserdataA->EndContact(bodyuserdataB);
+		bodyuserdataB->EndContact(bodyuserdataA);
 	}
 
 	return;
@@ -44,8 +44,8 @@ void CContactListener::PostSolve(b2Contact* contact, const b2ContactImpulse* imp
 
 	if (bodyuserdataA && bodyuserdataB) // not null
 	{
-		//bodyuserdataA->PostSolve(impulse);
-		//bodyuserdataB->PostSolve(impulse);
+		bodyuserdataA->PostSolve(impulse);
+		bodyuserdataB->PostSolve(impulse);
 	}
 
 	return;

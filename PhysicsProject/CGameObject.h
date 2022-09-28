@@ -12,9 +12,7 @@ enum class EGAMEOBJECTTYPE
 	LAUNCHABLE3,
 
 	// Enemies
-	ENEMY1,
-	ENEMY2,
-	ENEMY3,
+	ENEMY,
 
 	// Obstacles
 	DESTRUCTABLE1,
@@ -51,6 +49,12 @@ public:
 	// Returns the objects body
 	b2Body* Getb2Body() { if (m_pBody != nullptr) { return m_pBody; } }
 
+	// Should only be called on destructable objects
+	bool GetShouldDestroy() { return m_bShouldDestroy; }
+
+	// Returns the objects type
+	const EGAMEOBJECTTYPE& GetObjectType() { return m_EGameObjectType; }
+
 protected:
 
 	EGAMEOBJECTTYPE m_EGameObjectType;
@@ -64,6 +68,9 @@ protected:
 	// SFML for rendering
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
+
+	// Control for if object should be destroyed
+	bool m_bShouldDestroy = false;
 
 };
 
