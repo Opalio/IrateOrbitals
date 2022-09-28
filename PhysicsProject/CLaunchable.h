@@ -13,6 +13,10 @@ public:
 
     void Render(sf::RenderWindow& _window, float _fScale) override;
 
+    // Not all parameters are used for each ability
+    // Each parameter is used across all lauchable subclasses
+    virtual void ActivateSpecialAbility(sf::RenderWindow& _window, float _fScale, std::vector<CGameObject*>& _vpGameObjects);
+
     sf::Sprite& GetSprite() { return m_sprite; }
 };
 

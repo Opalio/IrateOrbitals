@@ -19,7 +19,7 @@ public:
 	void Render(sf::RenderWindow& _window, float _fScale);
 	void Update();
 
-	void MouseButtonPressed(sf::RenderWindow& _window);
+	void MouseButtonPressed(sf::RenderWindow& _window, float _fScale);
 	void MouseButtonReleased(float _fScale);
 	void MouseMoved(sf::RenderWindow& _window);
 
@@ -45,6 +45,10 @@ private:
 
 	// Used to control if level is complete
 	int m_iEnemyCount = 0;
+	
+	// Used to control if most recent launchables special ability has been activated
+	bool m_bSpecialAbilityActivated = true;
+	CLaunchable* m_pMostRecentlyLaunchedLaunchable = nullptr;
 
 	//std::vector<CLaunchable*> m_vpLaunchables;
 	//std::vector<Bird*> birds;

@@ -39,3 +39,7 @@ void CLaunchable::Render(sf::RenderWindow& _window, float _fScale)
 
 	_window.draw(m_sprite);
 }
+
+void CLaunchable::ActivateSpecialAbility(sf::RenderWindow& _window, float _fScale, std::vector<CGameObject*>& _vpGameObjects)
+{
+}

@@ -31,7 +31,7 @@ int main()
             {
             case sf::Event::MouseButtonPressed:
             {
-                level->MouseButtonPressed(window);
+                level->MouseButtonPressed(window, SCALE);
                 break;
             }
             case sf::Event::MouseButtonReleased:

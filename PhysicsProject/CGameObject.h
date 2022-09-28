@@ -8,8 +8,9 @@ enum class EGAMEOBJECTTYPE
 {
 	// Launchables
 	ASTERIOD,
-	LAUNCHABLE2,
-	LAUNCHABLE3,
+	COMET,
+	METEOR,
+	STARLINKSAT,
 
 	// Enemies
 	ENEMY,

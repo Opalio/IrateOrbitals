@@ -111,6 +111,15 @@
     <ClCompile Include="CGameObject.cpp">
       <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
+    <ClCompile Include="CComet.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeteor.cpp">
+      <Filter>Source Files\Game Objects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClCompile>
+    <ClCompile Include="CStarLinkSat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Spring.h">
@@ -172,6 +181,15 @@
     </ClInclude>
     <ClInclude Include="CGameObject.h">
       <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CComet.h">
+      <Filter>Header Files\GameObjects\PhysicsObjects\Indestructables\Launchables</Filter>
+    </ClInclude>
+    <ClInclude Include="CMeteor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CStarLinkSat.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

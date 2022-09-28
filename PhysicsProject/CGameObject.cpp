@@ -48,9 +48,9 @@ CGameObject* CGameObject::CreateGameObject(EGAMEOBJECTTYPE _EGameObjectType, b2W
 	case EGAMEOBJECTTYPE::ASTERIOD:
 		return new CAsteriod();
 		break;
-	case EGAMEOBJECTTYPE::LAUNCHABLE2:
+	case EGAMEOBJECTTYPE::COMET:
 		break;
-	case EGAMEOBJECTTYPE::LAUNCHABLE3:
+	case EGAMEOBJECTTYPE::METEOR:
 		break;
 	case EGAMEOBJECTTYPE::ENEMY:
 		break;

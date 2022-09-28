@@ -2,6 +2,9 @@
 #include "CAsteriod.h"
 #include "CNuclearPasta.h"
 #include "CEnemy.h"
+#include "CComet.h"
+#include "CMeteor.h"
+#include "CStarLinkSat.h"
 
 CLevel::CLevel(float _fScale)
 {
@@ -128,14 +131,29 @@ void CLevel::Update()
 	return;
 }
 
-void CLevel::MouseButtonPressed(sf::RenderWindow& _window)
+void CLevel::MouseButtonPressed(sf::RenderWindow& _window, float _fScale)
 {
-	CLaunchable* pNewLauchable = new CAsteriod();
+	if (m_bSpecialAbilityActivated) // If true then new lauchable should be created
+	{
+		CLaunchable* pNewLauchable = new CStarLinkSat();
 
-	m_vpGameObjects.push_back(pNewLauchable);
+		m_vpGameObjects.push_back(pNewLauchable);
 
-	m_pLauncher->LoadLaunchable(pNewLauchable);
-	m_pLauncher->MoveLaunchable(_window);
+		m_pLauncher->LoadLaunchable(pNewLauchable);
+		m_pLauncher->MoveLaunchable(_window);
+
+		m_bSpecialAbilityActivated = false;
+
+		m_pMostRecentlyLaunchedLaunchable = pNewLauchable;
+	}
+	else // Activate Special Ability
+	{
+		m_pMostRecentlyLaunchedLaunchable->ActivateSpecialAbility(_window, _fScale, m_vpGameObjects);
+
+		m_bSpecialAbilityActivated = true;
+	}
+
+	
 
 	return;
 }
