@@ -43,6 +43,9 @@ private:
 	// Sets element in destructableobjectsvector to nullptr
 	void DestroyDestructable(CDestructable* _pDestructable);
 
+	// Used to control if level is complete
+	int m_iEnemyCount = 0;
+
 	//std::vector<CLaunchable*> m_vpLaunchables;
 	//std::vector<Bird*> birds;
 };

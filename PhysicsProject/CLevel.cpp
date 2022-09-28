@@ -23,20 +23,41 @@ CLevel::CLevel(float _fScale)
 
 	// Planet
 
-	CPlanet* newPlanet = new CPlanet(sf::Vector2f(500, 250), _fScale, m_pWorld);
+	
+
+	CPlanet* newPlanet = new CPlanet(sf::Vector2f(1000, 500), _fScale, m_pWorld, "Planet.png", b2BodyType::b2_staticBody, 1.0f);
 	m_vpPlanets.push_back(newPlanet);
 	m_vpGameObjects.push_back(newPlanet);
 
-	CPlanet* newPlanet2 = new CPlanet(sf::Vector2f(750, 250), _fScale, m_pWorld);
+	CPlanet* newPlanet2 = new CPlanet(sf::Vector2f(750, 250), _fScale, m_pWorld, "Planet.png", b2BodyType::b2_dynamicBody, 0.5f);
 	m_vpPlanets.push_back(newPlanet2);
 	m_vpGameObjects.push_back(newPlanet2);
 
-	m_vpGameObjects.push_back(new CNuclearPasta(sf::Vector2f(500, 500), _fScale, m_pWorld));
+	CPlanet* newPlanet3 = new CPlanet(sf::Vector2f(100, 100), _fScale, m_pWorld, "Ball.png", b2BodyType::b2_dynamicBody, 1.0f);
+	m_vpPlanets.push_back(newPlanet3);
+	m_vpGameObjects.push_back(newPlanet3);
 
-	CDestructable* newEnemy = new CEnemy(sf::Vector2f(500, 300), _fScale, m_pWorld);
+	
 
-	m_vpGameObjects.push_back(newEnemy);
-	m_vpDestructableObjects.push_back(newEnemy);
+	newPlanet->GiveAsOrbital(newPlanet2->Getb2Body(), 25, 20);
+	newPlanet2->GiveAsOrbital(newPlanet3->Getb2Body(), 90, 10);
+
+	for (int i = 0; i < 10; i++)
+	{
+		m_vpGameObjects.push_back(new CNuclearPasta(sf::Vector2f(500 - i, 500 - i), _fScale, m_pWorld));
+	}
+
+	for (int i = 0; i < 20; i++)
+	{
+		CDestructable* newEnemy = new CEnemy(sf::Vector2f(500 + i, 300 + i), _fScale, m_pWorld);
+
+		m_vpGameObjects.push_back(newEnemy);
+		m_vpDestructableObjects.push_back(newEnemy);
+
+		m_iEnemyCount++;
+
+	}
+	
 
 	m_pLauncher = new CLauncher(sf::Vector2f(250, 410));
 }
@@ -175,6 +196,13 @@ void CLevel::DestroyDestructable(CDestructable* _pDestructable)
 			// exit the loop
 			i = m_vpDestructableObjects.size();
 		}
+	}
+
+	if (_pDestructable->GetObjectType() == EGAMEOBJECTTYPE::ENEMY)
+	{
+		m_iEnemyCount--;
+
+		std::cout << m_iEnemyCount << std::endl;
 	}
 
 	// Actually delete the object

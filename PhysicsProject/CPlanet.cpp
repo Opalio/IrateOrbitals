@@ -1,26 +1,27 @@
 #include "CPlanet.h"
 
-CPlanet::CPlanet(sf::Vector2f _v2fPosition, float _fScale, b2World* _pWorld)
+CPlanet::CPlanet(sf::Vector2f _v2fPosition, float _fScale, b2World* _pWorld, std::string _sPlanetName, b2BodyType _bodyType, float _fPlanetScale)
 {
 	m_EGameObjectType = EGAMEOBJECTTYPE::PLANET;
 
 	// Set the sprite
-	m_texture.loadFromFile("Resources/Sprites/Ball.png");
+	m_texture.loadFromFile("Resources/Sprites/" + _sPlanetName);
 	m_sprite.setTexture(m_texture);
 	float fOriginX = (m_texture.getSize().x / 2);
 	float fOriginY = (m_texture.getSize().y / 2);
 	m_sprite.setOrigin(fOriginX, fOriginY);
+	m_sprite.setScale(sf::Vector2f(_fPlanetScale, _fPlanetScale));
 
 	// Box2d set up
 	m_bodyDef.position = b2Vec2(_v2fPosition.x / _fScale, _v2fPosition.y / _fScale);
 
 	// Nessessary to be dynamic so it has mass
-	m_bodyDef.type = b2BodyType::b2_staticBody;
+	m_bodyDef.type = _bodyType;
 	m_pBody = _pWorld->CreateBody(&m_bodyDef);
 
 	m_pShape = new b2CircleShape();
 
-	float fRadius = (m_texture.getSize().x / 2);
+	float fRadius = (m_texture.getSize().x * _fPlanetScale / 2);
 	m_pShape->m_radius = (fRadius) / _fScale;
 
 	m_fixtureDef.density = 5.0f;
@@ -28,10 +29,21 @@ CPlanet::CPlanet(sf::Vector2f _v2fPosition, float _fScale, b2World* _pWorld)
 	m_pBody->CreateFixture(&m_fixtureDef);
 
 	m_pBody->GetUserData().pointer = (uintptr_t)this;
+
+	m_fMass = fRadius / 2.0f;
+
+	m_pOrbitalJoint = nullptr;
 }
 
 CPlanet::~CPlanet()
 {
+	// b2Joint's deletion is done by the world
+	if (m_pOrbitalJoint != nullptr)
+	{
+		m_pBody->GetWorld()->DestroyJoint(m_pOrbitalJoint);
+
+		m_pOrbitalJoint = nullptr;
+	}
 }
 
 void CPlanet::ExertGravitationalForceOn(CGameObject* _pGameObject)
@@ -68,4 +80,21 @@ void CPlanet::ExertGravitationalForceOn(CGameObject* _pGameObject)
 
 
 	//m_pLoadedLaunchable->Getb2Body()->ApplyLinearImpulseToCenter(b2LaunchVector, true);
+}
+
+void CPlanet::GiveAsOrbital(b2Body* _pBodyThatWillOrbit, float _fSpeed, int _iDistance)
+{
+	m_revoluteJointDef.bodyA = m_pBody;
+	m_revoluteJointDef.bodyB = _pBodyThatWillOrbit;
+	m_revoluteJointDef.collideConnected = false;
+	m_revoluteJointDef.localAnchorA.Set(0, 0);
+	m_revoluteJointDef.localAnchorB.Set(0, _iDistance);
+	m_revoluteJointDef.enableMotor = true;
+	m_revoluteJointDef.maxMotorTorque = INTMAX_MAX;
+	m_revoluteJointDef.motorSpeed = _fSpeed * (b2_pi / 180);//90 degrees per second
+
+	m_pOrbitalJoint = (b2RevoluteJoint*)m_pBody->GetWorld()->CreateJoint(&m_revoluteJointDef);
+
+
+	return;
 }
