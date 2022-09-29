@@ -17,8 +17,6 @@ enum class EGAMEOBJECTTYPE
 
 	// Obstacles
 	BOX,
-	DESTRUCTABLE2,
-	DESTRUCTABLE3,
 	NUCLEARPASTA,
 
 	// Gravity Generator
@@ -55,6 +53,9 @@ public:
 
 	// Returns the objects type
 	const EGAMEOBJECTTYPE& GetObjectType() { return m_EGameObjectType; }
+
+	// Used in Plank destructor so Joints are properly destroyed
+	void SetShouldDestroy(bool _ShouldDestroy) { m_bShouldDestroy = _ShouldDestroy; return; }
 
 protected:
 

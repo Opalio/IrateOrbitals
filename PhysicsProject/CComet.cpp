@@ -5,7 +5,7 @@ CComet::CComet()
 	m_EGameObjectType = EGAMEOBJECTTYPE::COMET;
 
 	// Set the sprite
-	m_texture.loadFromFile("Resources/Sprites/Asteroid.png");
+	m_texture.loadFromFile("Resources/Sprites/Goon2.png");
 	m_sprite.setTexture(m_texture);
 	float fOriginX = (m_texture.getSize().x / 2);
 	float fOriginY = (m_texture.getSize().y / 2);

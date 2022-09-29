@@ -56,10 +56,6 @@ CGameObject* CGameObject::CreateGameObject(EGAMEOBJECTTYPE _EGameObjectType, b2W
 		break;
 	case EGAMEOBJECTTYPE::BOX:
 		break;
-	case EGAMEOBJECTTYPE::DESTRUCTABLE2:
-		break;
-	case EGAMEOBJECTTYPE::DESTRUCTABLE3:
-		break;
 	case EGAMEOBJECTTYPE::NUCLEARPASTA:
 		break;
 	case EGAMEOBJECTTYPE::PLANET:

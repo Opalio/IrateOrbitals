@@ -14,7 +14,7 @@ void CDestructable::PostSolve(const b2ContactImpulse* _impulse)
 	std::cout << "normalImpulse: " << *_impulse->normalImpulses << std::endl;
 	std::cout << "tangentImpulse: " << *_impulse->tangentImpulses << std::endl;*/
 
-	if (*_impulse->normalImpulses >= 100.0f)
+	if (*_impulse->normalImpulses >= 80.0f)
 	{
 		m_bShouldDestroy = true;
 		//std::cout << m_bShouldDestroy << std::endl;

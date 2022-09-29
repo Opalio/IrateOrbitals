@@ -9,6 +9,10 @@ public:
     CLaunchable();
     virtual ~CLaunchable();
 
+    // Generates launchable using factory method
+    static CLaunchable* CreateLaunchable(EGAMEOBJECTTYPE _EGameObjectType);
+
+    // Setsup Box2D stuff
     void Launch(float _fScale, sf::Vector2f _v2fPosition, b2World& _world);
 
     void Render(sf::RenderWindow& _window, float _fScale) override;

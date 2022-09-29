@@ -1,4 +1,8 @@
 #include "CLaunchable.h"
+#include "CAsteriod.h"
+#include "CComet.h"
+#include "CMeteor.h"
+#include "CStarLinkSat.h"
 
 CLaunchable::CLaunchable()
 {
@@ -6,6 +10,33 @@ CLaunchable::CLaunchable()
 
 CLaunchable::~CLaunchable()
 {
+}
+
+CLaunchable* CLaunchable::CreateLaunchable(EGAMEOBJECTTYPE _EGameObjectType)
+{
+	switch (_EGameObjectType)
+	{
+	case EGAMEOBJECTTYPE::ASTERIOD:
+		return new CAsteriod();
+		break;
+	case EGAMEOBJECTTYPE::COMET:
+		return new CComet();
+		break;
+	case EGAMEOBJECTTYPE::METEOR:
+		return new CMeteor();
+		break;
+	case EGAMEOBJECTTYPE::STARLINKSAT:
+		return new CStarLinkSat();
+		break;
+	case EGAMEOBJECTTYPE::ENEMY:
+	case EGAMEOBJECTTYPE::BOX:
+	case EGAMEOBJECTTYPE::NUCLEARPASTA:
+	case EGAMEOBJECTTYPE::PLANET:
+	default:
+		return nullptr;
+		break;
+	}
+	return nullptr;
 }
 
 void CLaunchable::Launch(float _fScale, sf::Vector2f _v2fPosition, b2World& _world)

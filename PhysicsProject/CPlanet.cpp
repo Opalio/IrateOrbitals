@@ -30,7 +30,7 @@ CPlanet::CPlanet(sf::Vector2f _v2fPosition, float _fScale, b2World* _pWorld, std
 
 	m_pBody->GetUserData().pointer = (uintptr_t)this;
 
-	m_fMass = fRadius / 2.0f;
+	m_fMass = fRadius / 1.5f;
 
 	m_pOrbitalJoint = nullptr;
 }

@@ -13,7 +13,7 @@ CLauncher::CLauncher(sf::Vector2f _v2fPosition)
 	m_sprite.setPosition(_v2fPosition);
 
 	m_v2fFiringOrigin = _v2fPosition;
-	m_v2fFiringVector.y -= m_texture.getSize().y / 2;
+	m_v2fFiringOrigin.y -= m_texture.getSize().y / 4;
 
 	m_pLoadedLaunchable = nullptr;
 }
